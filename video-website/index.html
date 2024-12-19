@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Videos Example</title>
+    <style>
+        /* 1. 全屏背景视频样式 */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持视频比例，填满屏幕 */
+            z-index: -1; /* 确保视频在所有内容下方 */
+        }
+
+        /* 2. 左上角小框视频样式 */
+        .video-box-left-top {
+            position: absolute;
+            top: 20px;  /* 距离页面顶部 20px */
+            left: 20px; /* 距离页面左侧 20px */
+            width: 320px;   /* 小视频框的宽度 */
+            height: 240px;  /* 小视频框的高度 */
+            border: 2px solid white; /* 可选：为小视频框添加边框 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选：小视频框的阴影效果 */
+            z-index: 1; /* 确保小视频在背景视频之上 */
+        }
+
+        /* 3. 右上角小框视频样式 */
+        .video-box-right-top {
+            position: absolute;
+            top: 20px;  /* 距离页面顶部 20px */
+            right: 20px; /* 距离页面右侧 20px */
+            width: 320px;   /* 小视频框的宽度 */
+            height: 240px;  /* 小视频框的高度 */
+            border: 2px solid white; /* 可选：为小视频框添加边框 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选：小视频框的阴影效果 */
+            z-index: 1; /* 确保小视频在背景视频之上 */
+        }
+
+        /* 页面内容样式 */
+        .content {
+            position: absolute;
+            top: 50%;  /* 垂直居中 */
+            left: 50%;  /* 水平居中 */
+            transform: translate(-50%, -50%); /* 精确居中对齐 */
+            z-index: 1; /* 确保页面内容在视频之上 */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 20px; /* 给按钮留出空间 */
+        }
+
+        /* 按钮样式 */
+        .close-button {
+            margin-top: 20px;  /* 按钮与文字的距离 */
+            padding: 10px 20px;
+            background-color: #ff0000; /* 红色背景 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* 按钮悬停效果 */
+        .close-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 全屏背景视频 -->
+    <video class="video-background" autoplay loop muted>
+        <source src="file:///C:/Users/Admin/Desktop/video-website/background-video.mp4/WeChat_20241219151235.mp4" type="video/mp4">
+        <source src="background-video.webm" type="video/webm">
+        <source src="background-video.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- 左上角小视频 -->
+    <video class="video-box-left-top" autoplay loop muted>
+        <source src="file:///C:/Users/Admin/Desktop/video-website/mp4/WeChat_20241219164426.mp4" type="video/mp4">
+        <source src="small-video-left.webm" type="video/webm">
+        <source src="small-video-left.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- 右上角小视频 -->
+    <video class="video-box-right-top" autoplay loop muted>
+        <source src="file:///C:/Users/Admin/Desktop/video-website/small-video.mp4/WeChat_20241219161515.mp4" type="video/mp4">
+        <source src="small-video-right.webm" type="video/webm">
+        <source src="small-video-right.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- 页面内容 -->
+    <div class="content">
+        <h1>Welcome to Mur</h1>
+        <p>Mur is just a meme, it has no value.</p>
+
+        <!-- 关闭按钮，点击后跳转到推特 -->
+        <button class="close-button" onclick="redirectToTwitter()">X</button>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio autoplay loop volume="0.5">
+        <source src="file:///C:/Users/Admin/Desktop/video-website/obj_w5zDlMODwrDDiGjCn8Ky_2260874367_9ab2_d60e_c733_3e1cdd63a0bb2810e9cc6e31ece29cf5.mp3" type="audio/mp3">
+        <source src="background-music.ogg" type="audio/ogg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        // 跳转到推特的功能
+        function redirectToTwitter() {
+            window.location.href = "https://x.com/mur_solmeme";  // 更改为你想要的 Twitter 链接
+        }
+    </script>
+
+</body>
+</html>
